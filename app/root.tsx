@@ -8,9 +8,15 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import styles from "~/assets/styles.css";
+
+export function links() {
+  return [{ rel: "stylesheet", href: styles }];
+}
+
 export const meta: MetaFunction = () => ({
   charset: "utf-8",
-  title: "New Remix App",
+  title: "What The Fuck Should I Listen To Right Now?",
   viewport: "width=device-width,initial-scale=1",
 });
 
@@ -22,7 +28,11 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <Outlet />
+        <div className="super-wrap">
+          <div className="wrap">
+            <Outlet />
+          </div>
+        </div>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

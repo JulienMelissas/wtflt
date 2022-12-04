@@ -6,40 +6,13 @@ body {
   line-height: 1.1;
 }
 
-.super-wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-height: 100%;
-}
-
-.wrap {
-  max-width: 500px;
-  margin: 0 auto 250px;
-  padding: 30px;
-  font-size: 1.8rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.info {
-  position: absolute;
-  bottom: 10px;
-  right: 30px;
-  color: #777777;
-  font-size: 0.75rem;
-  text-align: right;
-  line-height: 1.5;
-}
-
 footer {
   margin-top: 50px;
 }
 
 h1,
 .h1 {
-  margin: 0 0 3rem;
+  margin: 0 0 2rem;
   font-size: 2.5rem;
 }
 
@@ -47,17 +20,16 @@ a,
 button {
   color: #000;
   cursor: pointer;
+  display: block;
   text-decoration: none;
-
 }
 
 button {
   background: none;
   border: none;
-  display: block;
   font-weight: bold;
   margin: 0;
-  padding: 30px 0 0 0;
+  padding: 0;
   text-align: left;
   text-transform: uppercase;
 }
@@ -74,23 +46,60 @@ p {
 small,
 .small {
   display: block;
-  margin-bottom: 20px;
-  margin-top: 10px;
-  font-size: 0.6rem;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .muted {
   color: #555555;
 }
 
+.super-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+.wrap {
+  max-width: 500px;
+  margin: 0 auto 250px;
+  padding: 2rem;
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.info {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  color: #777777;
+  font-size: 0.75rem;
+  text-align: right;
+  line-height: 1.5;
+}
+
+.info a {
+  display: inline;
+}
+
 /* Styles for Larger Screens */
 @media(min-width: 768px) {
   .wrap {
     max-width: 900px;
-    font-size: 2.75rem;
+    padding: 3rem;
   }
 
-  h1 {
+  h1,
+  .h1 {
     font-size: 4rem;
+  }
+
+  small,
+  .small {
+    font-size: 2rem;
+    margin-bottom: 2rem;
   }
 }

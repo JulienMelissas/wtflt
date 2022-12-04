@@ -40,7 +40,7 @@ export default function Artists() {
     return (
       <>
         <h1>Okay, party's over.</h1>
-        <Link to="/">Pick another artist.</Link>
+        <Link className="small" to="/">Pick another artist.</Link>
       </>
     );
   }
@@ -51,9 +51,8 @@ export default function Artists() {
       
       <Artist name={similarArtists[count].name} url={similarArtists[count].url} />
 
-      <button onClick={() => setCount(count + 1)}>I don't like that fucking artist.</button>
-      <br />
-      <Link to="/">I want to pick another artist.</Link>
+      <button className="small" onClick={() => setCount(count + 1)}>I don't like that fucking artist.</button>
+      <Link className="small" to="/">I want to pick another artist.</Link>
     </>
   );
 }

@@ -37,15 +37,34 @@ footer {
   margin-top: 50px;
 }
 
-h1 {
+h1,
+.h1 {
   margin: 0 0 3rem;
   font-size: 2.5rem;
 }
 
-a {
-  cursor: pointer;
+a,
+button {
   color: #000;
+  cursor: pointer;
   text-decoration: none;
+
+}
+
+button {
+  background: none;
+  border: none;
+  display: block;
+  font-weight: bold;
+  margin: 0;
+  padding: 30px 0 0 0;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+a:hover,
+button:hover {
+  text-decoration: underline;
 }
 
 p {
@@ -73,9 +92,5 @@ small,
 
   h1 {
     font-size: 4rem;
-  }
-
-  a:hover {
-    text-decoration: underline;
   }
 }

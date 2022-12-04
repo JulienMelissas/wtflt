@@ -10,6 +10,6 @@ const API_BASE = 'http://ws.audioscrobbler.com/2.0/';
  * @returns
  */
 export async function getSimilarArtists( artist: string, apiKey: string ) {
-  const response = fetch(`${API_BASE}?method=artist.getsimilar&artist=${artist}&api_key=${apiKey}&format=json`).then()
+  const response = fetch(`${API_BASE}?method=artist.getsimilar&artist=${artist}&api_key=${apiKey}&autocorrect=1&format=json`).then()
   return (await response).json();
 }

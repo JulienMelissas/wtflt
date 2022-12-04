@@ -8,10 +8,14 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import normalize from "normalize.css";
 import styles from "~/assets/styles.css";
 
 export function links() {
-  return [{ rel: "stylesheet", href: styles }];
+  return [
+    { rel: "stylesheet", href: normalize },
+    { rel: "stylesheet", href: styles },
+  ];
 }
 
 export const meta: MetaFunction = () => ({

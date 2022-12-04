@@ -9,7 +9,6 @@ import { messages } from "~/assets/messages";
 
 import { Artist } from "~/components/Artist";
 
-
 export const loader = async ({ context, params }: { params: any, context: any }) => {
   const LAST_FM_API_KEY = context.LAST_FM_API_KEY;
   

@@ -34,6 +34,16 @@ export default function Artists() {
   const [ count, setCount ] = useState(0);
 
   // @TODO: add some error handling here
+
+  // Return some different markup if we're out of recommendations
+  if (count >= similarArtists.length) {
+    return (
+      <>
+        <h1>Okay, party's over.</h1>
+        <Link to="/">Pick another artist.</Link>
+      </>
+    );
+  }
   
   return (
     <>
@@ -43,7 +53,7 @@ export default function Artists() {
 
       <button onClick={() => setCount(count + 1)}>I don't like that fucking artist.</button>
       <br />
-      <Link to="/">I want to pick another shitty artist.</Link>
+      <Link to="/">I want to pick another artist.</Link>
     </>
   );
 }

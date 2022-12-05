@@ -10,7 +10,10 @@ import { messages } from "~/assets/messages";
 import { Artist } from "~/components/Artist";
 
 export const loader = async ({ context, request }: { context: any, request: any  }) => {
+  // Load the API key up
   const LAST_FM_API_KEY = context.LAST_FM_API_KEY;
+  
+  // Grab the URL params
   const url = new URL(request.url);
   const artist = url.searchParams.get("artist");
 
@@ -19,18 +22,22 @@ export const loader = async ({ context, request }: { context: any, request: any 
     return redirect("/");
   }
   
-  // @TODO: add some error handling here for no/incorrect responses
-  const { similarartists } = await getSimilarArtists(artist, LAST_FM_API_KEY);
+  // Call the API
+  const lastfmResponse = await getSimilarArtists(artist, LAST_FM_API_KEY);
 
-  // if (!length(similarartists.artist)) {
-  //   // Some error message here
-  // }
+  // Go to error page if there's an error/if we don't have data we need
+  if (lastfmResponse.error || !lastfmResponse.similarartists.artist) {
+    return redirect("/fucked");
+  }
 
-  // As long as there are similar artists...
+  // ...if we do, save the data and shuffle it
+  const similarArtists = arrayShuffle(lastfmResponse.similarartists.artist);
+
+  // Pass the data on...
   return json({
-    artist: artist,
+    artist,
     messages,
-    similarArtists: arrayShuffle(similarartists.artist),
+    similarArtists,
   });
 };
 
@@ -38,8 +45,6 @@ export default function Artists() {
   const { messages, similarArtists } = useLoaderData();
 
   const [ count, setCount ] = useState(0);
-
-  // @TODO: add some error handling here
 
   // Return some different markup if we're out of recommendations
   if (count >= similarArtists.length) {

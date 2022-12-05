@@ -37,10 +37,10 @@ export default function App() {
           <Outlet />
         </div>
         <div className="info">
-          Powered by <strong><a href="https://last.fm">Last.fm</a></strong><br/>
-          This site was fucking made by <strong><a href="https://twitter.com/JulienMelissas" target="blank">Julien</a></strong><br/>
-          This site was completely based off <br/><strong><a href="http://www.whatthefuckshouldimakefordinner.com"  target="blank">What The Fuck Should I Make For Dinner</a></strong><br/>
-          Check out the source on <strong><a href="https://github.com/julienMelissas/wtflt"  target="blank">GitHub</a></strong>
+          Powered by <a href="https://last.fm">Last.fm</a><br/>
+          This site was fucking made by <a href="https://www.last.fm/user/julienam" target="blank">Julien</a><br/>
+          This site was completely based off <br/><a href="http://www.whatthefuckshouldimakefordinner.com"  target="blank">What The Fuck Should I Make For Dinner</a><br/>
+          Check out the source on <a href="https://github.com/julienMelissas/wtflt"  target="blank">GitHub</a>
         </div>
         <ScrollRestoration />
         <Scripts />

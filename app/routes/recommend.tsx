@@ -1,4 +1,4 @@
-import { json } from "@remix-run/cloudflare";
+import { json, redirect } from "@remix-run/cloudflare";
 import { useLoaderData, Link } from "@remix-run/react";
 import { useState } from "react";
 
@@ -9,11 +9,18 @@ import { messages } from "~/assets/messages";
 
 import { Artist } from "~/components/Artist";
 
-export const loader = async ({ context, params }: { params: any, context: any }) => {
+export const loader = async ({ context, request }: { context: any, request: any  }) => {
   const LAST_FM_API_KEY = context.LAST_FM_API_KEY;
+  const url = new URL(request.url);
+  const artist = url.searchParams.get("artist");
+
+  // If no artist, go back home
+  if (!artist) {
+    return redirect("/");
+  }
   
   // @TODO: add some error handling here for no/incorrect responses
-  const { similarartists } = await getSimilarArtists(params.artist, LAST_FM_API_KEY);
+  const { similarartists } = await getSimilarArtists(artist, LAST_FM_API_KEY);
 
   // if (!length(similarartists.artist)) {
   //   // Some error message here
@@ -21,7 +28,7 @@ export const loader = async ({ context, params }: { params: any, context: any })
 
   // As long as there are similar artists...
   return json({
-    artist: params.artist,
+    artist: artist,
     messages,
     similarArtists: arrayShuffle(similarartists.artist),
   });

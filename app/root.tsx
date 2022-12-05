@@ -33,16 +33,14 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <div className="super-wrap">
-          <div className="wrap">
-            <Outlet />
-          </div>
-          <div className="info">
-            Powered by <strong><a href="https://last.fm">Last.fm</a></strong><br/>
-            This site was fucking made by <strong><a href="https://twitter.com/JulienMelissas" target="blank">Julien</a></strong><br/>
-            This site was completely based off <br/><strong><a href="http://www.whatthefuckshouldimakefordinner.com"  target="blank">What The Fuck Should I Make For Dinner</a></strong><br/>
-            Check out the source on <strong><a href="https://github.com/julienMelissas/wtflt"  target="blank">GitHub</a></strong>
-          </div>
+        <div className="wrap">
+          <Outlet />
+        </div>
+        <div className="info">
+          Powered by <strong><a href="https://last.fm">Last.fm</a></strong><br/>
+          This site was fucking made by <strong><a href="https://twitter.com/JulienMelissas" target="blank">Julien</a></strong><br/>
+          This site was completely based off <br/><strong><a href="http://www.whatthefuckshouldimakefordinner.com"  target="blank">What The Fuck Should I Make For Dinner</a></strong><br/>
+          Check out the source on <strong><a href="https://github.com/julienMelissas/wtflt"  target="blank">GitHub</a></strong>
         </div>
         <ScrollRestoration />
         <Scripts />

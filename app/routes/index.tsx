@@ -9,9 +9,7 @@ export default function Index() {
         <input id="artist-input" name="artist" type="text" />
         <button className="small" type="submit">Let's fucking go.</button>
       </Form>
-      <a className="small" href="https://www.last.fm/music/Rick+Astley/_/Never+Gonna+Give+You+Up" target="_blank">
-        Fuck it, I'm feeling lucky.
-      </a>
+      <Link className="small" to="/lucky">Fuck it, I'm feeling lucky.</Link>
     </>
   );
 }

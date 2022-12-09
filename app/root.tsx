@@ -54,7 +54,7 @@ export default function App() {
           Powered by <a href="https://last.fm">Last.fm</a><br/>
           This site was fucking made by <a href="https://www.last.fm/user/julienam" target="blank">Julien</a><br/>
           This site was completely based off <br/><a href="http://www.whatthefuckshouldimakefordinner.com"  target="blank">What The Fuck Should I Make For Dinner</a><br/>
-          Check out the source on <a href="https://github.com/julienMelissas/wtflt"  target="blank">GitHub</a>
+          Check out the source on <a href="https://github.com/JulienMelissas/wtflt"  target="blank">GitHub</a>
         </div>
         <ScrollRestoration />
         <Scripts />

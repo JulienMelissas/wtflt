@@ -1,0 +1,138 @@
+html {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+      -moz-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  color: #000;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.1;
+}
+
+footer {
+  margin-top: 50px;
+}
+
+h1,
+.h1 {
+  margin: 0 0 2rem;
+  font-size: 2.5rem;
+}
+
+a,
+button {
+  color: #000;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+a:hover,
+button:hover {
+  text-decoration: underline;
+}
+
+p {
+  margin-bottom: 30px;
+}
+
+small,
+.small {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.muted {
+  color: #555555;
+}
+
+.wrap {
+  max-width: 500px;
+  margin: 0 auto 200px;
+  padding: 2rem;
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+#artist-input {
+  border: 4px solid #000;
+  color: #000;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  max-width: 600px;
+  padding: 10px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.info {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  color: #777777;
+  font-size: 0.75rem;
+  text-align: right;
+  line-height: 1.5;
+}
+
+.info a {
+  display: inline;
+  font-weight: 800;
+}
+
+/**
+ * Hiding class, making content visible only to screen readers but not visually
+ * "sr" meaning "screen-reader"
+ * @link: https://css-tricks.com/inclusively-hidden/
+ */
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap; 
+  width: 1px;
+}
+
+/* Styles for Larger Screens */
+@media(min-width: 768px) {
+  .wrap {
+    max-width: 800px;
+    padding: 3rem;
+  }
+
+  h1,
+  .h1 {
+    font-size: 4rem;
+  }
+
+  small,
+  .small {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}

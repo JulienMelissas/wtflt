@@ -33,12 +33,17 @@ export default function App() {
         <Links />
         {/* Google tag (gtag.js) */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-X239JYDTQV"></script>
-        <script>
+        <script async dangerouslySetInnerHTML={{
+          __html:`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'G-X239JYDTQV');
+          gtag('config', 'G-X239JYDTQV', {
+            page_path: window.location.pathname,
+          });
+          `,
+        }}>
         </script>
       </head>
       <body>
